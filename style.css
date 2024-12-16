@@ -1,0 +1,105 @@
+/* Устанавливаем box-sizing для всех элементов */
+* {
+    box-sizing: border-box; /* Устанавливаем, чтобы ширина и высота элементов включали padding и border */
+}
+
+body {
+    background-color: rgb(93, 155, 155); /* Цвет фона страницы */
+    font-family: 'Times New Roman', serif; /* Шрифт текста */
+    font-size: 15px; /* Размер текста */
+    line-height: 1.5; /* Межстрочный интервал */
+    margin: 20px; /* Отступы вокруг body */
+    min-height: 100vh; /* Минимальная высота body — 100% высоты окна просмотра */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    color: #333; /* Цвет текста заголовков */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+img {
+    max-width: 100%; /* Максимальная ширина изображения — 100% от родительского элемента */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    display: block; /* Делаем изображение блочным элементом */
+    margin: 0 auto; /* Выравниваем изображение по центру */
+    object-fit: cover; /* Устанавливаем, как изображение будет вписываться в контейнер */
+}
+
+ul {
+    list-style-type: square; /* Маркеры списка в виде квадратов */
+}
+
+/* Контейнер для изображения */
+.container {
+    text-align: center; /* Выравниваем содержимое контейнера по центру */
+}
+
+/* Стили для ссылок */
+a {
+    color: #e1ff00;
+    text-decoration: none; 
+    margin: 5px 0; /* Отступы сверху и снизу */
+}
+
+
+a:hover {
+    color: red;
+}
+
+/* Убираем отступы по умолчанию для figure */
+figure {
+    margin: 0; /* Убираем отступы */
+}
+
+body {
+    width: 100%; /* Ширина body — 100% */
+    max-width: 1200px; /* Максимальная ширина body — 1200px */
+    min-width: 320px; /* Минимальная ширина body — 320px */
+    height: 100vh; /* Высота body — 100% высоты окна просмотра */
+    margin: 0 auto; /* Выравниваем body по центру */
+}
+
+/* Стили для header */
+header {
+    width: 100%; /* Ширина header — 100% */
+    height: 100px; /* Высота header — 100px */
+    background-color: lightblue; /* Цвет фона header */
+}
+
+
+main {
+    width: 100%; /* Ширина main — 100% */
+    height: 200px; /* Высота main*/ 
+    background-color: lightgreen; /* Цвет фона main */
+}
+
+/* Стили для footer */
+footer {
+    width: 100%; /* Ширина footer — 100% */
+    height: 100px; /* Высота footer — 100px */
+    background-color: lightcoral; /* Цвет фона footer */
+}
+
+/* Используем позиционирование */
+header, main, footer {
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Фиксируем header вверху страницы */
+header {
+    position: sticky; /* Фиксируем header при прокрутке */
+    top: 0; /* Приклеиваем header к верхней части страницы */
+    z-index: 100; /* Устанавливаем z-index для header */
+}
+
+/* Фиксируем footer внизу страницы */
+footer {
+    position: fixed; /* Фиксируем footer */
+    bottom: 0; /* Приклеиваем footer к нижней части страницы */
+    left: 0; /* Приклеиваем footer к левому краю */
+    right: 0; /* Приклеиваем footer к правому краю */
+}
