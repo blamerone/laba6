@@ -55,7 +55,7 @@ main {
     min-height: 400px;     /* Минимальная высота 400px */
     position: relative;    /* Относительное позиционирование */
     display: grid;         /* Используем Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Создаем гибкие колонки */
+    grid-template-columns: 100px 200px 150px;  /* Создаем гибкие колонки */
     gap: 20px;             /* Добавляем промежутки между элементами */
     padding-top: 120px;    /* Добавляем отступ сверху, чтобы не перекрывать header */
 }
