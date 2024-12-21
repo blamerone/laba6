@@ -1,83 +1,107 @@
 /* Устанавливаем box-sizing для всех элементов */
 * {
-    box-sizing: border-box; /* Устанавливаем, чтобы ширина и высота элементов включали padding и border */
+    box-sizing: border-box; /* Включаем padding и border в общую ширину и высоту элементов */
 }
 
+/* Задаем размеры для элементов */
 body {
-    background-color: rgb(93, 155, 155); 
-    font-family: 'Times New Roman', serif; 
-    font-size: 15px; 
-    line-height: 1.5;
-    margin: 20px; /* Отступы вокруг body */
-    min-height: 100vh; /* Минимальная высота body — 100% высоты окна просмотра */
+    width: 100%;           /* Ширина 100% от родительского элемента */
+    max-width: 1200px;     /* Максимальная ширина 1200px */
+    min-width: 320px;      /* Минимальная ширина 320px */
+    min-height: 100vh;     /* Минимальная высота 100% от высоты окна просмотра */
+    margin: 0 auto;        /* Выравниваем по центру */
+    padding: 20px;         /* Отступы внутри body */
+    position: relative;    /* Относительное позиционирование */
+    font-family: Arial, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+header {
+    width: 100%;           /* Ширина 100% от родительского элемента */
+    height: 100px;         /* Фиксированная высота 100px */
+    max-height: 100px;     /* Максимальная высота 100px */
+    position: fixed;       /* Фиксируем элемент при прокрутке */
+    top: 0;                /* Прижимаем к верхней части экрана */
+    z-index: 100;          /* Устанавливаем приоритет слоя */
+    display: grid;         /* Используем Grid */
+    grid-template-columns: 100px auto 100px; /* Создаем три колонки */
+    align-items: center;   /* Выравниваем элементы по вертикали */
+    background-color: #fff; /* Добавляем фон для header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+    padding: 0 20px;       /* Добавляем отступы слева и справа */
+}
+
+header ul {
+    display: grid;         /* Используем Grid */
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Гибкие колонки */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-items: center; /* Выравниваем элементы по центру */
+}
+
+header ul li {
+    margin: 0 10px;
+}
+
+header ul li img {
+    width: 50px;           /* Уменьшаем размер картинки */
+    height: 50px;          /* Уменьшаем размер картинки */
+    object-fit: cover;      /* Подгоняем картинку под размеры */
+    border-radius: 50%;     /* Делаем картинку круглой */
+}
+
+main {
+    width: 100%;           /* Ширина 100% от родительского элемента */
+    min-height: 400px;     /* Минимальная высота 400px */
+    position: relative;    /* Относительное позиционирование */
+    display: grid;         /* Используем Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Создаем гибкие колонки */
+    gap: 20px;             /* Добавляем промежутки между элементами */
+    padding-top: 120px;    /* Добавляем отступ сверху, чтобы не перекрывать header */
 }
 
 h1, h2 {
-    color: #333; 
-    margin-top: 20px; /* Отступ сверху */
+    grid-column: span 2;   /* Заголовки будут занимать две колонки */
+    text-align: center;
+    color: #333;           
+    margin-top: 20px;
 }
 
-img {
-    max-width: 100%;
-    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
-    display: block; /* Делаем изображение блочным элементом */
-    margin: 0 auto; /* Выравниваем изображение по центру */
+p {
+    grid-column: span 3;   /* Параграфы будут занимать две колонки */
 }
 
 ul {
-    list-style-type: square; /* Маркеры списка в виде квадратов */
+    grid-column: span 2;   /* Списки будут занимать две колонки */
+    display: grid;         /* Используем Grid */
+    grid-template-columns: 100px 200px 150px;
+    list-style: none;
+    padding: 0;
+    justify-items: center; /* Выравниваем элементы по центру */
 }
 
-/* Контейнер для изображения */
 .container {
-    text-align: center; /* Выравниваем содержимое контейнера по центру */
+    display: grid;         /* Используем Grid */
+    grid-template-columns: 1fr; /* Одна колонка */
+    justify-items: center; /* Выравниваем элементы по центру */
+    align-items: center;   /* Выравниваем элементы по вертикали */
 }
 
-/* Стили для ссылок */
+img {
+    max-width: 100%;       /* Максимальная ширина 100% от родительского элемента */
+    height: auto;          /* Автоматическая высота, сохраняющая пропорции */
+    display: block;        /* Отображаем как блочный элемент */
+    margin: 0 auto;        /* Выравниваем по центру */
+}
+
 a {
-    color: #e1ff00;
-    text-decoration: none; 
-    margin: 5px 0; /* Отступы сверху и снизу */
+    color: #e1ff00;        /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin: 5px 0;         /* Отступы сверху и снизу */
+    display: block;        /* Отображаем как блочный элемент */
+    text-align: center;    /* Выравниваем текст по центру */
 }
-
 
 a:hover {
     color: red;
-}
-
-/* Убираем отступы по умолчанию для figure */
-figure {
-    margin: 0; /* Убираем отступы */
-}
-
-body {
-    width: 100%; /* Ширина body — 100% */
-    max-width: 1200px; /* Максимальная ширина body — 1200px */
-    min-width: 320px; /* Минимальная ширина body — 320px */
-    height: 100vh; /* Высота body — 100% высоты окна просмотра */
-    margin: 0 auto; /* Выравниваем body по центру */
-}
-
-/* Стили для header */
-header {
-    width: 100%; /* Ширина header — 100% */
-    height: 100px; /* Высота header — 100px */
-    background-color: lightblue; /* Цвет фона header */
-}
-
-
-/* Используем позиционирование */
-header, main,  {
-    position: relative; /* Относительное позиционирование */
-}
-
-/* Фиксируем header вверху страницы */
-header {
-    position: sticky; /* Фиксируем header при прокрутке */
-    top: 0; /* Приклеиваем header к верхней части страницы */
-    z-index: 100; /* Устанавливаем z-index для header */
 }
