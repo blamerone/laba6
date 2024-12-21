@@ -23,7 +23,7 @@ header {
     top: 0;                /* Прижимаем к верхней части экрана */
     z-index: 100;          /* Устанавливаем приоритет слоя */
     display: grid;         /* Используем Grid */
-    grid-template-columns: 100px auto 100px; /* Создаем три колонки */
+    grid-template-columns: 250px 400px; /* Создаем три колонки */
     align-items: center;   /* Выравниваем элементы по вертикали */
     background-color: #fff; /* Добавляем фон для header */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень */
@@ -82,16 +82,25 @@ ul {
 
 .container {
     display: grid;         /* Используем Grid */
-    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-columns: 2fr; /* две колонка */
     justify-items: center; /* Выравниваем элементы по центру */
     align-items: center;   /* Выравниваем элементы по вертикали */
 }
 
+/* Стили для изображений в body */
 img {
     max-width: 100%;       /* Максимальная ширина 100% от родительского элемента */
     height: auto;          /* Автоматическая высота, сохраняющая пропорции */
     display: block;        /* Отображаем как блочный элемент */
     margin: 0 auto;        /* Выравниваем по центру */
+}
+
+/* Стили для квадратных изображений */
+main img {
+    width: auto;         /* Фиксированная ширина */
+    height: auto;       /* Фиксированная высота */
+    object-fit: cover;     /* Заполняем квадрат, сохраняя пропорции */
+    border-radius: 10px;   /* Скругляем углы */
 }
 
 a {
